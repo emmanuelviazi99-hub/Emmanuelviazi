@@ -1,0 +1,25 @@
+
+
+INPUT infix_expression
+
+// Step 1: Reverse infix
+REVERSE infix_expression
+
+// Step 2: Swap brackets
+FOR each character ch in infix_expression DO
+IF ch == '(' THEN
+REPLACE with ')'
+ELSE IF ch == ')' THEN
+REPLACE with '('
+END IF
+END FOR
+
+// Step 3: Convert to postfix
+postfix = InfixToPostfix(infix_expression)
+
+// Step 4: Reverse postfix
+prefix = REVERSE(postfix)
+
+OUTPUT prefix
+
+END
